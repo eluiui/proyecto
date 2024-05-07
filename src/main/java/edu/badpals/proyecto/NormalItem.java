@@ -4,6 +4,7 @@ public class NormalItem extends Item implements Updateable{
 
     public NormalItem(String name, int sell_in, int quality) {
         super(name, sell_in, quality);
+        //TODO Auto-generated constructor stub
     }
 
     @Override

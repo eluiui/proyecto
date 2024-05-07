@@ -16,7 +16,6 @@ public class GildedRoseTest {
     private GildedRose shop = null;
     private NormalItem normal = null;
     private AgedBrie brie = null;
-    private Elixir elixir = null;
 
     @Before
     public void setupInventario() {
@@ -49,17 +48,18 @@ public class GildedRoseTest {
     
     @Test
     public void updateQuality() {
-        shop.addItem(elixir);
-        assertEquals(1, shop.itemsArray().size(), 0);
+        shop.addItem(normal);
+        shop.addItem(brie);
+        assertEquals(2, shop.itemsArray().size(), 0);
         System.out.println("Dia 0:" + '\n' + shop.toString());
         shop.updateQuality();
 
         // Hay que cambiar la vista del objeto Updateable 
         // para tener acceso al metodo getQuality del
         // tipo NormalItem
-        NormalItem item = (NormalItem) shop.itemsArray().get(0);
+        Item item = (Item) shop.itemsArray().get(0);
         assertEquals(19, item.getQuality(), 0);
-        assertEquals(1, ((NormalItem) (shop.itemsArray().get(1))).getQuality(), 0);
+        assertEquals(1, ((Item) (shop.itemsArray().get(1))).getQuality(), 0);
         System.out.println("Dia 1:" + '\n' + shop.toString());
     }
 }
