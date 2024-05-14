@@ -1,7 +1,8 @@
-package edu.badpals.proyecto;
+package edu.badpals.Item;
+
 public interface Updateable {
     public void update_item();
     public void update_quality();
-    public void update_sell_in();
-
+    public int getQuality();
+    public int getSellIn();
 }
